@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView = UITableView()
     var safeArea: UILayoutGuide!
@@ -21,6 +21,9 @@ class ViewController: UIViewController {
         view.backgroundColor = .darkGray
         tableView.backgroundColor = .darkGray
         safeArea = view.layoutMarginsGuide
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         setupTableView()
                 
         self.studentsArray = Student.createdStudents().sorted(by: {$0.fullName < $1.fullName})
@@ -35,13 +38,9 @@ class ViewController: UIViewController {
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        tableView.dataSource = self
     }
-
-}
-
-extension ViewController: UITableViewDataSource {
+    
+    //MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return studentsArray.count
@@ -63,5 +62,5 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
-    
+
 }
