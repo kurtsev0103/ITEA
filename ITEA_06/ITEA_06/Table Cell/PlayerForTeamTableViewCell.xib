@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerForTeamTableViewCell" rowHeight="60" id="KGk-i7-Jjw" customClass="PlayerForTeamTableViewCell" customModule="ITEA_06" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG3-Cc-V3r">
+                        <rect key="frame" x="16" y="20" width="50" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ayV-Wn-uzs">
+                        <rect key="frame" x="264" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ayV-Wn-uzs" secondAttribute="height" multiplier="1:1" id="sWq-CD-qEP"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ayV-Wn-uzs" secondAttribute="bottom" constant="10" id="3jH-OI-DO8"/>
+                    <constraint firstItem="ayV-Wn-uzs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="5WD-ym-BlG"/>
+                    <constraint firstItem="aG3-Cc-V3r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="DJV-oY-ySS"/>
+                    <constraint firstAttribute="bottom" secondItem="aG3-Cc-V3r" secondAttribute="bottom" constant="16" id="XgS-tk-IjN"/>
+                    <constraint firstItem="aG3-Cc-V3r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="bZk-dS-QGf"/>
+                    <constraint firstAttribute="trailing" secondItem="ayV-Wn-uzs" secondAttribute="trailing" constant="16" id="e4u-nd-Zyg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="countryImageView" destination="ayV-Wn-uzs" id="zdy-jB-TY0"/>
+                <outlet property="nameLabel" destination="aG3-Cc-V3r" id="0Vt-Tg-tch"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="131.25"/>
+        </tableViewCell>
+    </objects>
+</document>

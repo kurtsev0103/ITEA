@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MatchTableViewCell" rowHeight="92" id="KGk-i7-Jjw" customClass="MatchTableViewCell" customModule="ITEA_06" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cmm-wb-pGO">
+                        <rect key="frame" x="300" y="15" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Cmm-wb-pGO" secondAttribute="height" multiplier="1:1" id="RSw-im-oEn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xF-Cc-eOX">
+                        <rect key="frame" x="189" y="25.5" width="12" height="49"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <size key="shadowOffset" width="1" height="1"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zl-QR-BsM">
+                        <rect key="frame" x="156.5" y="25.5" width="25" height="49"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <size key="shadowOffset" width="1" height="1"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrL-gF-Qic">
+                        <rect key="frame" x="209.5" y="25.5" width="25" height="49"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <size key="shadowOffset" width="1" height="1"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pk1-6I-63C">
+                        <rect key="frame" x="20" y="15" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="pk1-6I-63C" secondAttribute="height" multiplier="1:1" id="sPY-QH-LNm"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Cmm-wb-pGO" secondAttribute="bottom" constant="15" id="3nS-Hd-5NC"/>
+                    <constraint firstItem="Cmm-wb-pGO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="4xd-AU-wxg"/>
+                    <constraint firstAttribute="bottom" secondItem="pk1-6I-63C" secondAttribute="bottom" constant="15" id="Aha-I6-Uq0"/>
+                    <constraint firstItem="pk1-6I-63C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="E9g-Yh-bn9"/>
+                    <constraint firstItem="pk1-6I-63C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Nqx-Vh-7ds"/>
+                    <constraint firstAttribute="trailing" secondItem="Cmm-wb-pGO" secondAttribute="trailing" constant="20" id="ONP-FX-NYY"/>
+                    <constraint firstItem="MrL-gF-Qic" firstAttribute="leading" secondItem="2xF-Cc-eOX" secondAttribute="trailing" constant="8.5" id="cJG-NU-K39"/>
+                    <constraint firstItem="2xF-Cc-eOX" firstAttribute="leading" secondItem="0Zl-QR-BsM" secondAttribute="trailing" constant="7.5" id="eS7-Cf-s2h"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2xF-Cc-eOX" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="0hI-6h-E9T"/>
+                <constraint firstItem="MrL-gF-Qic" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="VPy-wD-RHc"/>
+                <constraint firstItem="0Zl-QR-BsM" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="ewV-sz-nZM"/>
+                <constraint firstItem="2xF-Cc-eOX" firstAttribute="centerX" secondItem="njF-e1-oar" secondAttribute="centerX" id="puo-Tv-uJg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="firstTeamImage" destination="pk1-6I-63C" id="kzA-v8-aVS"/>
+                <outlet property="firstTeamScore" destination="0Zl-QR-BsM" id="okQ-CY-xSi"/>
+                <outlet property="secondTeamImage" destination="Cmm-wb-pGO" id="iGi-eU-dle"/>
+                <outlet property="secondTeamScore" destination="MrL-gF-Qic" id="1kc-ow-Pk9"/>
+            </connections>
+            <point key="canvasLocation" x="188.40579710144928" y="145.98214285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
