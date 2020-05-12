@@ -16,29 +16,27 @@ class InfoMatchViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var secondTeamName: UILabel!
     @IBOutlet weak var firstTeamScore: UILabel!
     @IBOutlet weak var secondTeamScore: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
         
     var match: Match!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.register(InfoTableViewCell.nib(), forCellReuseIdentifier: InfoTableViewCell.identifier)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
-        self.title = "Match"
         addAllParams()
+        self.title = "Match"
+        
+        tableView.register(InfoTableViewCell.nib(), forCellReuseIdentifier: InfoTableViewCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func addAllParams() {
-        self.firstTeamName.text = self.match.firstTeam.nameTeam
-        self.secondTeamName.text = self.match.secondTeam.nameTeam
-        self.firstTeamImage.image = UIImage(named: self.match.firstTeam.imageTeam)
-        self.secondTeamImage.image = UIImage(named: self.match.secondTeam.imageTeam)
-        self.firstTeamScore.text = String(self.match.firstTeamGoals)
-        self.secondTeamScore.text = String(self.match.secondTeamGoals)
+        self.firstTeamName.text = match.firstTeam.nameTeam
+        self.secondTeamName.text = match.secondTeam.nameTeam
+        self.firstTeamImage.image = UIImage(named: match.firstTeam.imageTeam)
+        self.secondTeamImage.image = UIImage(named: match.secondTeam.imageTeam)
+        self.firstTeamScore.text = String(match.firstTeamGoals)
+        self.secondTeamScore.text = String(match.secondTeamGoals)
     }
 
     //MARK: - UITableViewDataSource

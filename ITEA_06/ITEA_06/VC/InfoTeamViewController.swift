@@ -10,23 +10,23 @@ import UIKit
 
 class InfoTeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var nameTeam:                UILabel!
-    @IBOutlet weak var teamImageView:           UIImageView!
-    @IBOutlet weak var tableView:               UITableView!
-    @IBOutlet weak var switchPlayersToMatches:  UISegmentedControl!
+    @IBOutlet weak var nameTeam: UILabel!
+    @IBOutlet weak var teamImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var switchPlayersToMatches: UISegmentedControl!
     
     var team: Team!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.register(MatchesForTeamTableViewCell.nib(), forCellReuseIdentifier: MatchesForTeamTableViewCell.identifier)
-        tableView.register(PlayerForTeamTableViewCell.nib(), forCellReuseIdentifier: PlayerForTeamTableViewCell.identifier)
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         self.title = team.nameTeam
         addAllParams()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        tableView.register(MatchesForTeamTableViewCell.nib(), forCellReuseIdentifier: MatchesForTeamTableViewCell.identifier)
+        tableView.register(PlayerForTeamTableViewCell.nib(), forCellReuseIdentifier: PlayerForTeamTableViewCell.identifier)
     }
 
     func addAllParams() {

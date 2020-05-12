@@ -9,7 +9,6 @@
 import Foundation
 
 let countPlayers = 10
-
 let teams = Team.createdTeams()
 
 class Team {
@@ -43,17 +42,17 @@ class Team {
 
         for team in array {
             for _ in 0..<countPlayers {
-                let player = Player(name:    names.randomElement()!,
+                let player = Player(name: names.randomElement()!,
                                     surname: surnames.randomElement()!,
-                                    team:    team,
+                                    team: team,
                                     photoName: "avatar",
                                     countryName: country.randomElement()!,
                                     soccerPrice: String(Int.random(in: 100...900)) + ".000 $",
                                     age: Int.random(in: 18..<40))
+                
                 team.players.append(player)
             }
         }
-        
         return array
     }
     

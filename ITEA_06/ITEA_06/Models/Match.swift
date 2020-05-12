@@ -10,9 +10,9 @@ import Foundation
 
 struct Match {
     
-    var firstTeam:       Team
-    var secondTeam:      Team
-    var firstTeamGoals:  Int
+    var firstTeam: Team
+    var secondTeam: Team
+    var firstTeamGoals: Int
     var secondTeamGoals: Int
 
     var scoredGoal = [Player]()
@@ -20,10 +20,7 @@ struct Match {
     static func playMatch(firstTeam: Team, secondTeam: Team) -> Match? {
         if firstTeam.nameTeam != secondTeam.nameTeam {
                         
-            var match = Match(firstTeam: firstTeam,
-                              secondTeam: secondTeam,
-                              firstTeamGoals: Int.random(in: 0..<5),
-                              secondTeamGoals: Int.random(in: 0..<5))
+            var match = Match(firstTeam: firstTeam, secondTeam: secondTeam, firstTeamGoals: Int.random(in: 0..<5), secondTeamGoals: Int.random(in: 0..<5))
             
             if match.firstTeamGoals != 0 {
                 for _ in 0..<match.firstTeamGoals {
@@ -36,6 +33,7 @@ struct Match {
                     match.scoredGoal.append(secondTeam.players.randomElement()!)
                 }
             }
+            
             match.scoredGoal.shuffle()
             firstTeam.matches.append(match)
             secondTeam.matches.append(match)

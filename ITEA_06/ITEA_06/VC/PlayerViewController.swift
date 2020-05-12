@@ -13,7 +13,6 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var teamImageView: UIImageView!
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -22,17 +21,17 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = player.name
+        
         addAllParams()
+        self.title = player.name
     }
     
     func addAllParams() {
-        self.nameLabel.text         = "\(player.fullName), \(player.age) years"
-        self.priceLabel.text        = "PRICE: \(player.soccerPrice)"
-        self.teamNameLabel.text     = "TEAM: \(player.team.nameTeam)"
-        self.photoImageView.image   = UIImage(named: player.photoName)
-        self.flagImageView.image    = UIImage(named: player.countryName)
-        self.teamImageView.image    = UIImage(named: player.team.imageTeam)
+        self.nameLabel.text = "\(player.fullName), \(player.age) years"
+        self.priceLabel.text = "PRICE: \(player.soccerPrice)"
+        self.teamNameLabel.text = "TEAM: \(player.team.nameTeam)"
+        self.photoImageView.image = UIImage(named: player.photoName)
+        self.flagImageView.image = UIImage(named: player.countryName)
+        self.teamImageView.image = UIImage(named: player.team.imageTeam)
     }
 }

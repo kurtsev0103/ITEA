@@ -18,11 +18,10 @@ class MatchTableViewCell: UITableViewCell {
     static let identifier = "MatchTableViewCell"
         
     func configure(with match: Match) {
-        self.firstTeamImage.image   = UIImage(named: (match.firstTeam.imageTeam))
-        self.secondTeamImage.image  = UIImage(named: (match.secondTeam.imageTeam))
-        
-        self.firstTeamScore.text    = String(match.firstTeamGoals)
-        self.secondTeamScore.text   = String(match.secondTeamGoals)
+        self.firstTeamImage.image = UIImage(named: (match.firstTeam.imageTeam))
+        self.secondTeamImage.image = UIImage(named: (match.secondTeam.imageTeam))
+        self.firstTeamScore.text = String(match.firstTeamGoals)
+        self.secondTeamScore.text = String(match.secondTeamGoals)
     }
     
     static func nib() -> UINib {

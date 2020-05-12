@@ -20,10 +20,8 @@ class MatchesForTeamTableViewCell: UITableViewCell {
         return UINib(nibName: "MatchesForTeamTableViewCell", bundle: nil)
     }
     
-    func configure(match: Match) {
-        
-        let str = match.firstTeam.nameTeam + " - " + match.secondTeam.nameTeam
-        self.teamsNames.text = str
+    func configure(match: Match) {        
+        self.teamsNames.text = match.firstTeam.nameTeam + " - " + match.secondTeam.nameTeam
         self.firstTeamScore.text = String(match.firstTeamGoals)
         self.secondTeamScore.text = String(match.secondTeamGoals)        
     }
