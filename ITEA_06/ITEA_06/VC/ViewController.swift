@@ -56,10 +56,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func addNewRandomMatch(_ sender: Any) {
         if let match = Match.playMatch(firstTeam: teams.randomElement()!, secondTeam: teams.randomElement()!) {
             matches.insert(match, at: 0)
+            tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .left)
         } else {
             addNewRandomMatch(self)
         }
-        tableView.reloadData()
     }
     
     @IBAction func addNewMatch(_ sender: Any) {

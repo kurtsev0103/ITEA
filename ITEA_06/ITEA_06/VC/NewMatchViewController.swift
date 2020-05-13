@@ -87,8 +87,9 @@ class NewMatchViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             let match = Match.playMatch(firstTeam: selectedFirstTeam, secondTeam: selectedSecondTeam)
             
             matches.insert(match!, at: 0)
+            rootVC.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
             dismiss(animated: true)
-            rootVC.tableView.reloadData()            
+
         }
     }
     
