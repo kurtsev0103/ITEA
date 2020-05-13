@@ -8,6 +8,8 @@
 
 import Foundation
 
+var matches = [Match]()
+
 struct Match {
     
     var firstTeam: Team

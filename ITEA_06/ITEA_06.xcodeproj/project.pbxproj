@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3409402D246994330062058B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409402C246994330062058B /* Team.swift */; };
+		34291B6E246C2BE1004F645E /* NewMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34291B6D246C2BE1004F645E /* NewMatchViewController.swift */; };
 		3430DD552469BB1700C1B1A0 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430DD532469BB1700C1B1A0 /* InfoTableViewCell.swift */; };
 		3430DD562469BB1700C1B1A0 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3430DD542469BB1700C1B1A0 /* InfoTableViewCell.xib */; };
 		3442874C246AE93D00BB9B50 /* InfoTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3442874B246AE93D00BB9B50 /* InfoTeamViewController.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		3409402C246994330062058B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		34291B6D246C2BE1004F645E /* NewMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchViewController.swift; sourceTree = "<group>"; };
 		3430DD532469BB1700C1B1A0 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		3430DD542469BB1700C1B1A0 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 		3442874B246AE93D00BB9B50 /* InfoTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTeamViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				34745F5C2469ABE7002BC387 /* InfoMatchViewController.swift */,
 				34D2825D246A159A00AB4C99 /* PlayerViewController.swift */,
 				3442874B246AE93D00BB9B50 /* InfoTeamViewController.swift */,
+				34291B6D246C2BE1004F645E /* NewMatchViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				34A4FB022469E76A0035E00A /* Player.swift in Sources */,
 				34428757246B052700BB9B50 /* PlayerForTeamTableViewCell.swift in Sources */,
 				3442875B246B064700BB9B50 /* MatchesForTeamTableViewCell.swift in Sources */,
+				34291B6E246C2BE1004F645E /* NewMatchViewController.swift in Sources */,
 				34745F5324699806002BC387 /* Match.swift in Sources */,
 				34D2825E246A159A00AB4C99 /* PlayerViewController.swift in Sources */,
 			);

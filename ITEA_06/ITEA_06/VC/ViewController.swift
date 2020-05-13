@@ -12,8 +12,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    var matches = [Match]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,15 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
                 
-        playMatches(count: 5)
-    }
-
-    func playMatches(count: Int) {
-        for _ in 0..<count {
-            if let match = Match.playMatch(firstTeam: teams.randomElement()!, secondTeam: teams.randomElement()!) {
-                matches.append(match)
-            }
-        }
+        addNewRandomMatch(self)
     }
     
     //MARK: - UITableViewDataSource
@@ -63,13 +53,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: - Actions
     
-    @IBAction func addNewMatch(_ sender: Any) {
+    @IBAction func addNewRandomMatch(_ sender: Any) {
         if let match = Match.playMatch(firstTeam: teams.randomElement()!, secondTeam: teams.randomElement()!) {
-            matches.append(match)
+            matches.insert(match, at: 0)
         } else {
-            addNewMatch(self)
+            addNewRandomMatch(self)
         }
         tableView.reloadData()
+    }
+    
+    @IBAction func addNewMatch(_ sender: Any) {
+        let popoverVC = storyboard?.instantiateViewController(identifier: "NewMatchViewController") as! NewMatchViewController
+        
+        popoverVC.modalPresentationStyle = .popover
+        popoverVC.rootVC = self
+
+        let popover = popoverVC.popoverPresentationController
+        popover?.delegate = self
+        popover?.barButtonItem = sender as? UIBarButtonItem
+        
+        self.present(popoverVC, animated: true)
+    }
+
+}
+
+extension UIViewController: UIPopoverPresentationControllerDelegate {
+    
+    public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
 }
