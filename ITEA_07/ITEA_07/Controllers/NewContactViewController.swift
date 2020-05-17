@@ -73,7 +73,6 @@ class NewContactViewController: UIViewController {
         }
         
         self.delegate?.addContact(contact: contactObj)
-        dismiss(animated: true)
         self.navigationController?.popViewController(animated: true)
     }
 }
