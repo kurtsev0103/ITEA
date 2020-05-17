@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1KG-Q7-1tM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ITEA_07" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gfj-bM-xPm">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAb-J5-oE5">
+                                <rect key="frame" x="314" y="762" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oAb-J5-oE5" secondAttribute="height" multiplier="1:1" id="B51-GA-RrF"/>
+                                    <constraint firstAttribute="height" constant="70" id="JTz-3N-wuT"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="add"/>
+                                <connections>
+                                    <segue destination="hB6-t6-RP1" kind="show" identifier="goToAddContact" id="tBd-rW-YGO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gfj-bM-xPm" secondAttribute="trailing" id="HJf-52-EOn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gfj-bM-xPm" secondAttribute="bottom" id="PaU-tj-Bpa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oAb-J5-oE5" secondAttribute="trailing" constant="30" id="Yk9-0Q-Sjl"/>
+                            <constraint firstItem="oAb-J5-oE5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="nsL-w6-KeT"/>
+                            <constraint firstItem="Gfj-bM-xPm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oHU-03-ryK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oAb-J5-oE5" secondAttribute="bottom" constant="30" id="qeh-Pe-fbg"/>
+                            <constraint firstItem="Gfj-bM-xPm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vTF-uN-MwE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="SaN-WK-ZtM">
+                        <barButtonItem key="rightBarButtonItem" title="Delete All" id="iFY-Zu-HsP">
+                            <connections>
+                                <action selector="deleteAllObjects:" destination="BYZ-38-t0r" id="ljk-u9-mYH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Gfj-bM-xPm" id="Gfo-Yk-Hjh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="116"/>
+        </scene>
+        <!--New Contact View Controller-->
+        <scene sceneID="f3n-Gn-01W">
+            <objects>
+                <viewController id="hB6-t6-RP1" customClass="NewContactViewController" customModule="ITEA_07" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xeb-45-8me">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="53i-R8-1yv">
+                                <rect key="frame" x="117" y="160" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="GwY-Bv-uj1"/>
+                                    <constraint firstAttribute="width" constant="180" id="bfL-hy-S6a"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ifJ-tu-X5X">
+                                <rect key="frame" x="117" y="367" width="180" height="32"/>
+                                <segments>
+                                    <segment title="Man"/>
+                                    <segment title="Woman"/>
+                                </segments>
+                                <connections>
+                                    <action selector="manOrWomanAction:" destination="hB6-t6-RP1" eventType="valueChanged" id="oUq-rn-pTM"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Aay-hk-uG5">
+                                <rect key="frame" x="20" y="498" width="374" height="210.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RoL-lf-5xe">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m3z-fV-68o">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="36.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="49L-vU-1Fj">
+                                                        <rect key="frame" x="0.0" y="1.5" width="34" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="34" id="p7z-NE-eEa"/>
+                                                            <constraint firstAttribute="height" constant="36.5" id="wLd-2M-lO7"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alex" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOh-Iu-3G1">
+                                                        <rect key="frame" x="42" y="0.0" width="332" height="36.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36.5" id="Vfn-em-L07"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4HN-SG-z7E">
+                                        <rect key="frame" x="0.0" y="43.5" width="374" height="36.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZSE-nq-cPU">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="36.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VAD-K2-kW2">
+                                                        <rect key="frame" x="0.0" y="1.5" width="34" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36.5" id="1Ba-zY-leQ"/>
+                                                            <constraint firstAttribute="width" constant="34" id="vM6-Mq-I8p"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kurtsev" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RgR-Dk-M7t">
+                                                        <rect key="frame" x="42" y="0.0" width="332" height="36.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36.5" id="lvB-JM-pCY"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bPL-AA-glt">
+                                        <rect key="frame" x="0.0" y="87" width="374" height="36.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rjI-eX-mFa">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="36.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xPr-2Z-SJm">
+                                                        <rect key="frame" x="0.0" y="0.5" width="34" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="34" id="1PN-xM-Cry"/>
+                                                            <constraint firstAttribute="height" constant="36.5" id="dOI-3j-qaz"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+38 066 777 77 77" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nMz-0W-ghc">
+                                                        <rect key="frame" x="42" y="0.0" width="332" height="36.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36.5" id="Smm-3m-z2D"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="next" textContentType="tel"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m3X-J7-M43">
+                                        <rect key="frame" x="0.0" y="130.5" width="374" height="36.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DSg-90-LCf">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="36.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tF5-h8-tAr">
+                                                        <rect key="frame" x="0.0" y="-0.5" width="34" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="34" id="Dhr-lC-J52"/>
+                                                            <constraint firstAttribute="height" constant="36.5" id="tG8-Wu-FmI"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Heroes of Stalingrad Street" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nb8-ji-YE5">
+                                                        <rect key="frame" x="42" y="0.0" width="332" height="36.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36.5" id="sJJ-Sb-mmP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="street-address"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1gI-Xn-mDn">
+                                        <rect key="frame" x="0.0" y="174" width="374" height="36.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="thq-qD-AfC">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="36.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XnL-nx-rZF">
+                                                        <rect key="frame" x="0.0" y="1.5" width="34" height="33"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36.5" id="Mxz-g3-T5U"/>
+                                                            <constraint firstAttribute="width" constant="34" id="QXG-SU-anD"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kurtsev0103@gmail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zSi-lD-jXH">
+                                                        <rect key="frame" x="42" y="0.0" width="332" height="36.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36.5" id="o70-pF-39K"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ifJ-tu-X5X" firstAttribute="centerX" secondItem="53i-R8-1yv" secondAttribute="centerX" id="59w-iv-rPO"/>
+                            <constraint firstItem="Aay-hk-uG5" firstAttribute="leading" secondItem="qUE-qM-cW5" secondAttribute="leading" constant="20" id="AP7-Qg-bqr"/>
+                            <constraint firstItem="qUE-qM-cW5" firstAttribute="trailing" secondItem="Aay-hk-uG5" secondAttribute="trailing" constant="20" id="ROs-rW-LX1"/>
+                            <constraint firstItem="ifJ-tu-X5X" firstAttribute="width" secondItem="53i-R8-1yv" secondAttribute="width" id="YyB-6i-JQp"/>
+                            <constraint firstItem="ifJ-tu-X5X" firstAttribute="top" secondItem="53i-R8-1yv" secondAttribute="bottom" constant="27" id="Z5e-dQ-gZE"/>
+                            <constraint firstItem="53i-R8-1yv" firstAttribute="centerX" secondItem="qUE-qM-cW5" secondAttribute="centerX" id="hZv-I5-BvY"/>
+                            <constraint firstItem="53i-R8-1yv" firstAttribute="top" secondItem="qUE-qM-cW5" secondAttribute="top" constant="20" id="iRz-uk-RkK"/>
+                            <constraint firstItem="Aay-hk-uG5" firstAttribute="top" secondItem="ifJ-tu-X5X" secondAttribute="bottom" constant="100" id="puZ-lk-OXn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qUE-qM-cW5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xq4-LM-BhG">
+                        <barButtonItem key="rightBarButtonItem" image="checkmark" catalog="system" id="cWA-x4-L4h">
+                            <connections>
+                                <action selector="saveAction:" destination="hB6-t6-RP1" id="ETk-WJ-Zyi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="adressTextField" destination="Nb8-ji-YE5" id="Dmm-m1-N67"/>
+                        <outlet property="emailTextField" destination="zSi-lD-jXH" id="v2c-kx-wcm"/>
+                        <outlet property="genderSegmentedControl" destination="ifJ-tu-X5X" id="Y7v-DT-CoI"/>
+                        <outlet property="imageView" destination="53i-R8-1yv" id="2ex-FQ-9Nj"/>
+                        <outlet property="nameTextField" destination="UOh-Iu-3G1" id="5Pd-co-ASf"/>
+                        <outlet property="phoneTextField" destination="nMz-0W-ghc" id="Ov6-Zh-DkB"/>
+                        <outlet property="surnameTextField" destination="RgR-Dk-M7t" id="2K7-ZJ-W6V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ka5-wd-Fzn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657.9710144927537" y="115.84821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CqB-lT-Glu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1KG-Q7-1tM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="bs9-8N-TOS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0cE-iv-l87"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H9l-mH-hjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add" width="512" height="512"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="envelope" catalog="system" width="128" height="93"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
+    </resources>
+</document>
