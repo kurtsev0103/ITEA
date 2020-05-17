@@ -114,8 +114,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: AddContactDelegate {
     
     func addContact(contact: NSManagedObject) {
-        contacts.append(contact)
-        tableView.reloadData()
+        self.contacts.append(contact)
+        self.tableView.reloadData()
     }
 }
 
