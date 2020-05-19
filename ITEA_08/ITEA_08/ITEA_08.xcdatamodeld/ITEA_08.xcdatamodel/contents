@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Player" representedClassName="Player" syncable="YES" codeGenerationType="class">
+        <attribute name="age" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="countryImage" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="surname" attributeType="String"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="players" inverseEntity="Team"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES" codeGenerationType="class">
+        <attribute name="image" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="matches" optional="YES" attributeType="Transformable" customClassName="Matches"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="wins" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="team" inverseEntity="Player"/>
+    </entity>
+    <elements>
+        <element name="Player" positionX="-75.23828125" positionY="38.984375" width="128" height="118"/>
+        <element name="Team" positionX="-285.83984375" positionY="38.94921875" width="128" height="118"/>
+    </elements>
+</model>
