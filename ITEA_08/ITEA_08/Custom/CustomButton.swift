@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomButton: UIButton {
+@IBDesignable class CustomButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -29,7 +29,9 @@ class MatchTableViewCell: UITableViewCell {
         
         if match.firstTeamName == UserDefaults.standard.string(forKey: userNickKey) {
             firstTeamNameLabel.textColor = UIColor.systemYellow
+            secondTeamNameLabel.textColor = UIColor.white
         } else {
+            firstTeamNameLabel.textColor = UIColor.white
             secondTeamNameLabel.textColor = UIColor.systemYellow
         }
     }
