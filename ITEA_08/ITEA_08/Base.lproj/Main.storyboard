@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z5F-tg-8im">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z5F-tg-8im">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -226,6 +226,7 @@
                         <outlet property="myLevelLabel" destination="Frp-nA-HyO" id="BcP-6q-ZHd"/>
                         <outlet property="myTeamImageView" destination="dhp-qc-y8V" id="n62-Mp-iKI"/>
                         <outlet property="myTeamNameLabel" destination="j9W-QS-3mB" id="WbF-bo-LoQ"/>
+                        <outlet property="playButton" destination="OSb-ic-C5F" id="5sA-qk-CRA"/>
                         <outlet property="segmentControl" destination="5Ek-9G-IV4" id="DfO-cy-na2"/>
                         <outlet property="tableView" destination="cpK-Hd-jDy" id="LqH-ds-44L"/>
                     </connections>

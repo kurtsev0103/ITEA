@@ -16,6 +16,7 @@ class MyTeamViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var myLevelLabel: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var playButton: CustomButton!
     
     var myTeam: Team!
     var myMatches = [Match]()
@@ -27,6 +28,7 @@ class MyTeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playButton.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(PlayerTableViewCell.nib(), forCellReuseIdentifier: PlayerTableViewCell.identifier)
@@ -142,6 +144,10 @@ class MyTeamViewController: UIViewController {
     }
     
     @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
+        playButton.isHidden = true
+        if sender.selectedSegmentIndex == 1 {
+            playButton.isHidden = !playButton.isHidden
+        }
         tableView.reloadData()
     }
 }
