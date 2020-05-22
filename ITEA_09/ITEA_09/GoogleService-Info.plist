@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1015536843702-q7ltao6of6h1st8m7t6o2ijt0ss1putp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1015536843702-q7ltao6of6h1st8m7t6o2ijt0ss1putp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBegjyHKoQRtiRlGGjxKF-fiCRqyQS5Brg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1015536843702</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.oleksandrkurtsev.ITEA-09</string>
+	<key>PROJECT_ID</key>
+	<string>fakebook-28165</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fakebook-28165.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1015536843702:ios:9d269a0f12790f487e1f17</string>
+	<key>DATABASE_URL</key>
+	<string>https://fakebook-28165.firebaseio.com</string>
+</dict>
+</plist>

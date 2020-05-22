@@ -1,0 +1,11 @@
+platform :ios, '13.0'
+
+target 'ITEA_09' do
+
+  use_frameworks!
+
+  # Pods for ITEA_09
+  pod 'FirebaseUI'
+  pod 'FirebaseUI/Auth'
+
+end
