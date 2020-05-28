@@ -1,0 +1,12 @@
+platform :ios, '13.0'
+
+target 'ITEA_10' do
+
+  use_frameworks!
+
+  # Pods for ITEA_10
+  pod 'FirebaseUI/Auth'
+  pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
+
+end
