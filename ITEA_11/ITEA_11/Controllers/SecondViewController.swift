@@ -32,7 +32,7 @@ class SecondViewController: UIViewController {
             self.nameLabel.text = user.fullName
             self.emailLabel.text = user.email
             self.fetchImage(with: user.photo)
-            self.activityIndicator.startAnimating()
+            self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = true
         }
     }
