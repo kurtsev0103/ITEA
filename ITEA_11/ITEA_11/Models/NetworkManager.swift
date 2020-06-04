@@ -15,7 +15,7 @@ class NetworkManager {
     func fetchCurrentUser() {
         let urlString = "https://fakemyapi.com/api/fake?id=\(id)"
         guard let url = URL(string: urlString) else { return }
-        let session = URLSession(configuration: .default)
+        let session = URLSession.shared
         let task = session.dataTask(with: url) { data, response, error in
             if let data = data {
                 if let currentUser =  self.parseJSON(with: data) {
