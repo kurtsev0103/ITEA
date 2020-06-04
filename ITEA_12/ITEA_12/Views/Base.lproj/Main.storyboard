@@ -493,36 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFr-kp-3tA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642" y="1544"/>
-        </scene>
-        <!--Team Image View Controller-->
-        <scene sceneID="cqc-Ra-TT9">
-            <objects>
-                <viewController storyboardIdentifier="TeamImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v0W-4a-0ts" customClass="TeamImageViewController" customModule="LiveFootball" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="I3B-fb-zAn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWd-Tj-UYl">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="CWd-Tj-UYl" secondAttribute="bottom" id="Jfx-XU-XuN"/>
-                            <constraint firstItem="CWd-Tj-UYl" firstAttribute="leading" secondItem="aSp-xe-MNd" secondAttribute="leading" id="PVH-9F-UtG"/>
-                            <constraint firstItem="CWd-Tj-UYl" firstAttribute="top" secondItem="I3B-fb-zAn" secondAttribute="top" id="jaM-gb-wrk"/>
-                            <constraint firstItem="CWd-Tj-UYl" firstAttribute="trailing" secondItem="aSp-xe-MNd" secondAttribute="trailing" id="zmw-Vg-WbU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="aSp-xe-MNd"/>
-                    </view>
-                    <connections>
-                        <outlet property="teamImageView" destination="CWd-Tj-UYl" id="Uqe-Zt-TLR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EC8-eW-cmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="71.014492753623188" y="1543.5267857142856"/>
+            <point key="canvasLocation" x="-293" y="1525"/>
         </scene>
         <!--Team Info View Controller-->
         <scene sceneID="hyJ-EU-O4g">
@@ -598,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hao-fj-BNa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1339.1304347826087" y="1543.5267857142856"/>
+            <point key="canvasLocation" x="-990" y="1525"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="swG-eY-X7D">

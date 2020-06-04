@@ -12,7 +12,6 @@
 		341EC08A2487F5B100F5DCED /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341EC0892487F5B100F5DCED /* StatisticsViewController.swift */; };
 		341EC08C2487FC3600F5DCED /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341EC08B2487FC3600F5DCED /* Statistics.swift */; };
 		3451577124890387003746D9 /* TeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451577024890387003746D9 /* TeamInfoViewController.swift */; };
-		3451577324891FBB003746D9 /* TeamImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451577224891FBB003746D9 /* TeamImageViewController.swift */; };
 		347C27372487BA7C00EBB713 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C27362487BA7C00EBB713 /* NetworkManager.swift */; };
 		347CF81F2486EDDC00D09B09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347CF81E2486EDDC00D09B09 /* LoginViewController.swift */; };
 		347CF8212486EED500D09B09 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347CF8202486EED500D09B09 /* MainViewController.swift */; };
@@ -38,7 +37,6 @@
 		341EC0892487F5B100F5DCED /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		341EC08B2487FC3600F5DCED /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		3451577024890387003746D9 /* TeamInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoViewController.swift; sourceTree = "<group>"; };
-		3451577224891FBB003746D9 /* TeamImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamImageViewController.swift; sourceTree = "<group>"; };
 		347C27362487BA7C00EBB713 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		347CF81E2486EDDC00D09B09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		347CF8202486EED500D09B09 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				34D40ABE2487B0200019C01B /* RestorePassViewController.swift */,
 				341EC0892487F5B100F5DCED /* StatisticsViewController.swift */,
 				3451577024890387003746D9 /* TeamInfoViewController.swift */,
-				3451577224891FBB003746D9 /* TeamImageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -329,7 +326,6 @@
 				347CF8252486F32F00D09B09 /* Constants.swift in Sources */,
 				347CF8282486F68D00D09B09 /* LoginButton.swift in Sources */,
 				347C27372487BA7C00EBB713 /* NetworkManager.swift in Sources */,
-				3451577324891FBB003746D9 /* TeamImageViewController.swift in Sources */,
 				34E0148B2487A07F0004B0AA /* RegistrationViewController.swift in Sources */,
 				347CF81F2486EDDC00D09B09 /* LoginViewController.swift in Sources */,
 				3451577124890387003746D9 /* TeamInfoViewController.swift in Sources */,
