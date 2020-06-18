@@ -57,15 +57,11 @@ extension UIViewController {
     
     func goToAuthViewController() {
         let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first
-        if window?.rootViewController is AuthViewController {
-            dismiss(animated: true)
-        } else {
-            let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController")
-            UIView.transition(with: window!, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                window?.rootViewController = vc
-                window?.makeKeyAndVisible()
-            })
-        }
+        let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController")
+        UIView.transition(with: window!, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        })
     }
 }
