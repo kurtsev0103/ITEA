@@ -10,41 +10,37 @@ import SpriteKit
 
 class BestScene: ParentScene {
     
+    var places = [10, 100, 10_000]
+    
     override func didMove(to view: SKView) {
-        setHeader(withName: "options", andBackground: "header_background")
+        setHeader(withName: "best", andBackground: "header_background")
         
-        let music = ButtonNode(title: nil, backgroundName: "music")
-        music.position = CGPoint(x: self.frame.midX - 50, y: self.frame.midY)
-        music.name = "music"
-        music.label.isHidden = true
-        addChild(music)
+        let titles = ["back"]
         
-        let sound = ButtonNode(title: nil, backgroundName: "sound")
-        sound.position = CGPoint(x: self.frame.midX + 50, y: self.frame.midY)
-        sound.name = "sound"
-        sound.label.isHidden = true
-        addChild(sound)
+        for (index, title) in titles.enumerated() {
+            let button = ButtonNode(title: title, backgroundName: "button_background")
+            button.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 200 + CGFloat(100 * index))
+            button.name = title
+            button.label.name = title
+            addChild(button)
+        }
         
-        let back = ButtonNode(title: "back", backgroundName: "button_background")
-        back.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 100)
-        back.name = "back"
-        back.label.name = "back"
-        addChild(back)
+        let topPlaces = places.sorted { $0 > $1 }.prefix(3)
+        for (index, value) in topPlaces.enumerated() {
+            let l = SKLabelNode(text: value.description)
+            l.fontColor = UIColor(red: 219/255, green: 226/255, blue: 215/255, alpha: 1.0)
+            l.fontName = "AmericanTypewriter-Bold"
+            l.fontSize = 30
+            l.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(index * 60))
+            addChild(l)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
         let node = self.atPoint(location)
         
-        if node.name == "music" {
-            
-            print("music")
-            
-        } else if node.name == "sound" {
-            
-            print("sound")
-            
-        } else if node.name == "back" {
+        if node.name == "back" {
             
             let transition = SKTransition.crossFade(withDuration: 1.0)
             guard let backScene = backScene else { return }

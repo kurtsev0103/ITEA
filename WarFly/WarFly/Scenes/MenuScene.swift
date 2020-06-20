@@ -49,7 +49,12 @@ class MenuScene: ParentScene {
             self.scene!.view?.presentScene(optionsScene, transition: transition)
             
         } else if node.name == "best" {
-            print("best")
+            
+            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let bestScene = BestScene(size: self.size)
+            bestScene.backScene = self
+            bestScene.scaleMode = .aspectFill
+            self.scene?.view?.presentScene(bestScene, transition: transition)
         }
     }
 }
