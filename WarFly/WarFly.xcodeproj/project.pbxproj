@@ -10,6 +10,8 @@
 		34002AD0249E4C8900AEBC35 /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34002ACF249E4C8900AEBC35 /* ParentScene.swift */; };
 		34002AD2249E504B00AEBC35 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34002AD1249E504B00AEBC35 /* OptionsScene.swift */; };
 		34002AD4249E556700AEBC35 /* BestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34002AD3249E556700AEBC35 /* BestScene.swift */; };
+		34002AD7249E5AE600AEBC35 /* EnemyExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 34002AD5249E5AE600AEBC35 /* EnemyExplosion.sks */; };
+		34002AD8249E5AE600AEBC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34002AD6249E5AE600AEBC35 /* Assets.xcassets */; };
 		344C1793249DD86E00CD5F02 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C1792249DD86E00CD5F02 /* HUD.swift */; };
 		344C1799249DDDF400CD5F02 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C1798249DDDF400CD5F02 /* ButtonNode.swift */; };
 		3496B3AE249DE27F006294D6 /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3496B3AD249DE27F006294D6 /* PauseScene.swift */; };
@@ -46,6 +48,8 @@
 		34002ACF249E4C8900AEBC35 /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
 		34002AD1249E504B00AEBC35 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
 		34002AD3249E556700AEBC35 /* BestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScene.swift; sourceTree = "<group>"; };
+		34002AD5249E5AE600AEBC35 /* EnemyExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyExplosion.sks; sourceTree = "<group>"; };
+		34002AD6249E5AE600AEBC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		344C1792249DD86E00CD5F02 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		344C1798249DDDF400CD5F02 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		3496B3AD249DE27F006294D6 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34002AD9249E5AF100AEBC35 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				34002AD5249E5AE600AEBC35 /* EnemyExplosion.sks */,
+				34002AD6249E5AE600AEBC35 /* Assets.xcassets */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
 		344C1794249DDACF00CD5F02 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +174,7 @@
 		34FEAF8C249D94050041E3E0 /* WarFly */ = {
 			isa = PBXGroup;
 			children = (
+				34002AD9249E5AF100AEBC35 /* Particles */,
 				34DDF6DC249DAA9B0028E5F1 /* Protocols + Extensions */,
 				34FEAFA7249D94680041E3E0 /* Classes */,
 				344C1796249DDB4000CD5F02 /* Managers */,
@@ -264,10 +278,12 @@
 			files = (
 				34FEAF99249D94050041E3E0 /* Main.storyboard in Resources */,
 				34FEAFC3249D94A90041E3E0 /* PlayerPlane.atlas in Resources */,
+				34002AD8249E5AE600AEBC35 /* Assets.xcassets in Resources */,
 				34FEAFC2249D94A90041E3E0 /* BluePowerUp.atlas in Resources */,
 				34FEAFC5249D9B760041E3E0 /* YellowAmmo.atlas in Resources */,
 				34FEAF9B249D94060041E3E0 /* Assets.xcassets in Resources */,
 				34FEAF9E249D94060041E3E0 /* LaunchScreen.storyboard in Resources */,
+				34002AD7249E5AE600AEBC35 /* EnemyExplosion.sks in Resources */,
 				34FEAFBF249D94A90041E3E0 /* Enemy_2.atlas in Resources */,
 				34FEAFC1249D94A90041E3E0 /* GreenPowerUp.atlas in Resources */,
 				34FEAFC0249D94A90041E3E0 /* Enemy_1.atlas in Resources */,
