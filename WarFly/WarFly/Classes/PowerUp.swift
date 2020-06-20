@@ -34,8 +34,8 @@ class PowerUp: SKSpriteNode {
         let path = CGMutablePath()
         path.move(to: CGPoint(x: 12 - offsetX, y: 99 - offsetY))
         path.addLine(to: CGPoint(x: 22 - offsetX, y: 99 - offsetY))
-        path.addLine(to: CGPoint(x: 22 - offsetX, y: 89 - offsetY))
-        path.addLine(to: CGPoint(x: 12 - offsetX, y: 75 - offsetY))
+        path.addLine(to: CGPoint(x: 22 - offsetX, y: 30 - offsetY))
+        path.addLine(to: CGPoint(x: 12 - offsetX, y: 30 - offsetY))
         path.closeSubpath()
         self.physicsBody = SKPhysicsBody(polygonFrom: path)
         

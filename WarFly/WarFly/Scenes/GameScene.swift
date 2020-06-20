@@ -14,6 +14,8 @@ class GameScene: ParentScene {
     private let hud = HUD()
     private let screenSize = UIScreen.main.bounds.size
     
+    var backgroundMusic: SKAudioNode!
+    
     private var player: PlayerPlane!
     private var lives = 3 {
         didSet {
@@ -36,6 +38,11 @@ class GameScene: ParentScene {
     }
 
     override func didMove(to view: SKView) {
+        if let musicURL = Bundle.main.url(forResource: "backgroundMusic", withExtension: "m4a") {
+            backgroundMusic = SKAudioNode(url: musicURL)
+            addChild(backgroundMusic)
+        }
+        
         self.scene?.isPaused = false
         guard sceneManager.gameScene == nil else { return }
         sceneManager.gameScene = self
@@ -239,8 +246,10 @@ extension GameScene: SKPhysicsContactDelegate {
             }
             
         case [.powerUp, .player]:
-            
+                        
             if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
+                self.run(SKAction.playSoundFileNamed("powerUpSound", waitForCompletion: false))
+
                 if contact.bodyA.node?.name == "greenPowerUp" {
                     contact.bodyA.node?.removeFromParent()
                     player.greenPowerUp()
@@ -264,9 +273,10 @@ extension GameScene: SKPhysicsContactDelegate {
             
         case [.enemy, .shot]:
             
-            if contact.bodyA.node?.parent != nil {
+            if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
                 contact.bodyA.node?.removeFromParent()
                 contact.bodyB.node?.removeFromParent()
+                self.run(SKAction.playSoundFileNamed("hitSound", waitForCompletion: false))
                 hud.score += 5
                 addChild(explosion!)
                 self.run(waitForExplosion) { explosion?.removeFromParent() }

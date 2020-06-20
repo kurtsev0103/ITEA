@@ -13,6 +13,9 @@
 		34002AD7249E5AE600AEBC35 /* EnemyExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 34002AD5249E5AE600AEBC35 /* EnemyExplosion.sks */; };
 		34002AD8249E5AE600AEBC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34002AD6249E5AE600AEBC35 /* Assets.xcassets */; };
 		34002ADB249E604500AEBC35 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34002ADA249E604500AEBC35 /* GameOverScene.swift */; };
+		34002ADE249E6B6700AEBC35 /* backgroundMusic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 34002ADC249E6B6700AEBC35 /* backgroundMusic.m4a */; };
+		34002ADF249E6B6700AEBC35 /* hitSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34002ADD249E6B6700AEBC35 /* hitSound.wav */; };
+		34002AE1249E70CB00AEBC35 /* powerUpSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34002AE0249E70CB00AEBC35 /* powerUpSound.mp3 */; };
 		344C1793249DD86E00CD5F02 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C1792249DD86E00CD5F02 /* HUD.swift */; };
 		344C1799249DDDF400CD5F02 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C1798249DDDF400CD5F02 /* ButtonNode.swift */; };
 		3496B3AE249DE27F006294D6 /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3496B3AD249DE27F006294D6 /* PauseScene.swift */; };
@@ -52,6 +55,9 @@
 		34002AD5249E5AE600AEBC35 /* EnemyExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyExplosion.sks; sourceTree = "<group>"; };
 		34002AD6249E5AE600AEBC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34002ADA249E604500AEBC35 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		34002ADC249E6B6700AEBC35 /* backgroundMusic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = backgroundMusic.m4a; sourceTree = "<group>"; };
+		34002ADD249E6B6700AEBC35 /* hitSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitSound.wav; sourceTree = "<group>"; };
+		34002AE0249E70CB00AEBC35 /* powerUpSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = powerUpSound.mp3; sourceTree = "<group>"; };
 		344C1792249DD86E00CD5F02 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		344C1798249DDDF400CD5F02 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		3496B3AD249DE27F006294D6 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 				34FEAF8D249D94050041E3E0 /* AppDelegate.swift */,
 				34FEAF97249D94050041E3E0 /* Main.storyboard */,
 				34FEAF9C249D94060041E3E0 /* LaunchScreen.storyboard */,
+				34002ADC249E6B6700AEBC35 /* backgroundMusic.m4a */,
+				34002AE0249E70CB00AEBC35 /* powerUpSound.mp3 */,
+				34002ADD249E6B6700AEBC35 /* hitSound.wav */,
 				34FEAF9A249D94060041E3E0 /* Assets.xcassets */,
 				34FEAF9F249D94060041E3E0 /* Info.plist */,
 			);
@@ -196,11 +205,11 @@
 				344C1792249DD86E00CD5F02 /* HUD.swift */,
 				34FEAFAB249D94750041E3E0 /* Background.swift */,
 				34FEAFAC249D94750041E3E0 /* PlayerPlane.swift */,
-				34FEAFC7249D9DC90041E3E0 /* Shot.swift */,
 				34FEAFC9249DA0660041E3E0 /* YellowShot.swift */,
 				34FEAFAD249D94750041E3E0 /* Enemy.swift */,
 				34FEAFAE249D94750041E3E0 /* Cloud.swift */,
 				34FEAFA8249D94750041E3E0 /* Island.swift */,
+				34FEAFC7249D9DC90041E3E0 /* Shot.swift */,
 				34FEAFAF249D94750041E3E0 /* PowerUp.swift */,
 				34FEAFAA249D94750041E3E0 /* BluePowerUp.swift */,
 				34FEAFA9249D94750041E3E0 /* GreenPowerUp.swift */,
@@ -286,7 +295,10 @@
 				34FEAFC5249D9B760041E3E0 /* YellowAmmo.atlas in Resources */,
 				34FEAF9B249D94060041E3E0 /* Assets.xcassets in Resources */,
 				34FEAF9E249D94060041E3E0 /* LaunchScreen.storyboard in Resources */,
+				34002ADF249E6B6700AEBC35 /* hitSound.wav in Resources */,
 				34002AD7249E5AE600AEBC35 /* EnemyExplosion.sks in Resources */,
+				34002AE1249E70CB00AEBC35 /* powerUpSound.mp3 in Resources */,
+				34002ADE249E6B6700AEBC35 /* backgroundMusic.m4a in Resources */,
 				34FEAFBF249D94A90041E3E0 /* Enemy_2.atlas in Resources */,
 				34FEAFC1249D94A90041E3E0 /* GreenPowerUp.atlas in Resources */,
 				34FEAFC0249D94A90041E3E0 /* Enemy_1.atlas in Resources */,
