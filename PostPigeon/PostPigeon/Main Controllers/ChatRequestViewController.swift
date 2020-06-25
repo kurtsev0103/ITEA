@@ -17,12 +17,49 @@ class ChatRequestViewController: UIViewController {
     let acceptButton = UIButton(title: kButtonAccept, titleColor: .white, backColor: .black)
     let denyButton = UIButton(title: kButtonDeny, titleColor: Colors.niceRed, backColor: Colors.mainWhite)
     
+    private var chat: MChat
+    
+    init(chat: MChat) {
+        self.chat = chat
+        nameLabel.text = chat.friendUsername
+        imageView.sd_setImage(with: URL(string: chat.friendAvatarStringURL), completed: nil)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customizeElements()
         setupConstraints()
         
         view.backgroundColor = Colors.mainWhite
+        
+        denyButton.addTarget(self, action: #selector(denyButtonTapped), for: .touchUpInside)
+        acceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func denyButtonTapped() {
+        dismiss(animated: true) {
+            FirestoreManager.shared.deleteWaitingChat(chat: self.chat) { (result) in
+                switch result {
+                case .success():
+                    //TODO
+                    self.showAlert(title: kAlertTitleSuccess, message: "")
+                case .failure(let error):
+                    //TODO
+                    self.showAlert(title: kAlertTitleError, message: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    @objc private func acceptButtonTapped() {
+        dismiss(animated: true) {
+            print(#function)
+        }
     }
     
     // MARK: - Private Methods

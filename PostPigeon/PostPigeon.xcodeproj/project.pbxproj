@@ -38,6 +38,7 @@
 		34AF3D7F24A16D8C009DCE7B /* FirstRegistrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AF3D7E24A16D8C009DCE7B /* FirstRegistrViewController.swift */; };
 		34AF3D8124A17B65009DCE7B /* SecondRegistrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AF3D8024A17B65009DCE7B /* SecondRegistrViewController.swift */; };
 		34AF3D8324A17FDD009DCE7B /* ThirdRegistrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AF3D8224A17FDD009DCE7B /* ThirdRegistrViewController.swift */; };
+		34D353BA24A53D3C001F2708 /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D353B924A53D3C001F2708 /* MMessage.swift */; };
 		34DEBA5A24A36B850022B788 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEBA5924A36B850022B788 /* SectionHeader.swift */; };
 		34DEBA5C24A3734F0022B788 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 34DEBA5B24A3734F0022B788 /* users.json */; };
 		34DEBA5F24A374460022B788 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEBA5E24A374460022B788 /* MUser.swift */; };
@@ -91,6 +92,7 @@
 		34AF3D7E24A16D8C009DCE7B /* FirstRegistrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegistrViewController.swift; sourceTree = "<group>"; };
 		34AF3D8024A17B65009DCE7B /* SecondRegistrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegistrViewController.swift; sourceTree = "<group>"; };
 		34AF3D8224A17FDD009DCE7B /* ThirdRegistrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdRegistrViewController.swift; sourceTree = "<group>"; };
+		34D353B924A53D3C001F2708 /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
 		34DEBA5924A36B850022B788 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		34DEBA5B24A3734F0022B788 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		34DEBA5E24A374460022B788 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			children = (
 				34DEBA5E24A374460022B788 /* MUser.swift */,
 				34DEBA6024A3745C0022B788 /* MChat.swift */,
+				34D353B924A53D3C001F2708 /* MMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				34AF3D7D24A16311009DCE7B /* CustomButton.swift in Sources */,
 				344E3AC424A49AF900519BEF /* UIButton + Extension.swift in Sources */,
 				34FDF44924A19088000583C9 /* AuthError.swift in Sources */,
+				34D353BA24A53D3C001F2708 /* MMessage.swift in Sources */,
 				344B56C1249F8E1000AE4321 /* UIViewController + Extension.swift in Sources */,
 				34FDF44B24A19122000583C9 /* Validators.swift in Sources */,
 				34AF3D7F24A16D8C009DCE7B /* FirstRegistrViewController.swift in Sources */,

@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class ListViewController: UIViewController {
     
-    //let activeChats = Bundle.main.decode([MChat].self, from: "activeChats.json")
-    //let waitingChats = Bundle.main.decode([MChat].self, from: "waitingChats.json")
+    var activeChats = [MChat]()
+    var waitingChats = [MChat]()
+    
+    private var waitingChatsListener: ListenerRegistration?
     
     enum Section: Int, CaseIterable {
         case waitingChats, activeChats
@@ -39,12 +42,30 @@ class ListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        waitingChatsListener?.remove()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
         setupCollectionView()
         createDataSource()
         reloadData()
+        
+        waitingChatsListener = ListenerManager.shared.waitingChatsObserve(chats: waitingChats, completion: { (result) in
+            switch result {
+            case .success(let chats):
+                if self.waitingChats != [], self.waitingChats.count <= chats.count {
+                    let chatRequestVC = ChatRequestViewController(chat: chats.last!)
+                    self.present(chatRequestVC, animated: true, completion: nil)
+                }
+                self.waitingChats = chats
+                self.reloadData()
+            case .failure(let error):
+                self.showAlert(title: kAlertTitleError, message: error.localizedDescription)
+            }
+        })
     }
     
     // MARK: - Private Methods
@@ -70,13 +91,15 @@ class ListViewController: UIViewController {
         
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
         collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseId)
+        
+        collectionView.delegate = self
     }
     
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, MChat>()
         snapshot.appendSections([.waitingChats, .activeChats])
-        //snapshot.appendItems(waitingChats, toSection: .waitingChats)
-        //snapshot.appendItems(activeChats, toSection: .activeChats)
+        snapshot.appendItems(waitingChats, toSection: .waitingChats)
+        snapshot.appendItems(activeChats, toSection: .activeChats)
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
@@ -171,5 +194,20 @@ extension ListViewController {
 extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension ListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let chat = self.dataSource?.itemIdentifier(for: indexPath) else { return }
+        guard let section = Section(rawValue: indexPath.section) else { return }
+        switch section {
+        case .waitingChats:
+            let chatRequestVC = ChatRequestViewController(chat: chat)
+            self.present(chatRequestVC, animated: true, completion: nil)
+        case .activeChats:
+            print(indexPath)
+        }
     }
 }

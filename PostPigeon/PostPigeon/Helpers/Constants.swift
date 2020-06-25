@@ -108,7 +108,7 @@ let kAlertMessCheckLocation         = "To enable it go: Settings -> Privacy -> L
 let kAlertMessRestrictedLocation    = "Application is not authorized for location services"
 let kAlertMessWrongPhoneNumber      = "Wrong phone number"
 let kAlertMessPleaseWait            = "Please wait. Account creation"
-
+let kAlertMessMessageHasBeenSent    = "Your message has been sent"
 // MARK: - Other
 
 let kTitleConversations             = "Conversations"
