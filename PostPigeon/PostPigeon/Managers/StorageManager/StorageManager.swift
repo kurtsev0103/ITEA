@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 import FirebaseStorage
 
 class StorageManager {
@@ -17,6 +18,7 @@ class StorageManager {
     private init() {}
     
     let storageReference = Storage.storage().reference()
+    
     private var avatarsReference: StorageReference {
         return storageReference.child("avatars")
     }
@@ -42,6 +44,44 @@ class StorageManager {
                 }
                 completion(.success(downloadURL))
             }
+        }
+    }
+    
+    func uploadImageMessage(photo: UIImage, to chat: MChat, completion: @escaping (Result<URL, Error>) -> Void) {
+        guard let scaledImage = photo.scaleToSafeUploadSize else { return }
+        guard let imageData = scaledImage.jpegData(compressionQuality: 0.4) else { return }
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        let imageName = [UUID().uuidString, String(Date().timeIntervalSince1970)].joined()
+        let uid: String = Auth.auth().currentUser!.uid
+        let chatName = [chat.friendUsername, uid].joined()
+        
+        self.avatarsReference.child(chatName).child(imageName).putData(imageData, metadata: metadata) { (metadata, error) in
+            guard let _ = metadata else {
+                completion(.failure(error!))
+                return
+            }
+            self.avatarsReference.child(chatName).child(imageName).downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    completion(.failure(error!))
+                    return
+                }
+                completion(.success(downloadURL))
+            }
+        }
+    }
+    
+    func downloadImage(url: URL, completion: @escaping (Result<UIImage?, Error>) -> Void) {
+        let ref = Storage.storage().reference(forURL: url.absoluteString)
+        let megaByte = Int64(1 * 1024 * 1024)
+        ref.getData(maxSize: megaByte) { (data, error) in
+            guard let imageData = data else {
+                completion(.failure(error!))
+                return
+            }
+            completion(.success(UIImage(data: imageData)))
         }
     }
 }

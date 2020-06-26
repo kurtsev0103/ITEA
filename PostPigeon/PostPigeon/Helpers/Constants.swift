@@ -33,6 +33,7 @@ struct Fonts {
 
 // MARK: - Image Names
 
+let kImageSystemCamera              = "camera"
 let kImageSystemSmiley              = "smiley"
 let kImageSystemPeople              = "person.2"
 let kImageSystemConv                = "bubble.left.and.bubble.right"
