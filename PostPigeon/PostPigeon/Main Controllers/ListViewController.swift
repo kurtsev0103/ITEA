@@ -15,7 +15,8 @@ class ListViewController: UIViewController {
     var waitingChats = [MChat]()
     
     private var waitingChatsListener: ListenerRegistration?
-    
+    private var activeChatsListener: ListenerRegistration?
+
     enum Section: Int, CaseIterable {
         case waitingChats, activeChats
         
@@ -44,6 +45,7 @@ class ListViewController: UIViewController {
     
     deinit {
         waitingChatsListener?.remove()
+        activeChatsListener?.remove()
     }
     
     override func viewDidLoad() {
@@ -61,6 +63,16 @@ class ListViewController: UIViewController {
                     self.present(chatRequestVC, animated: true, completion: nil)
                 }
                 self.waitingChats = chats
+                self.reloadData()
+            case .failure(let error):
+                self.showAlert(title: kAlertTitleError, message: error.localizedDescription)
+            }
+        })
+        
+        activeChatsListener = ListenerManager.shared.activeChatsObserve(chats: activeChats, completion: { (result) in
+            switch result {
+            case .success(let chats):
+                self.activeChats = chats
                 self.reloadData()
             case .failure(let error):
                 self.showAlert(title: kAlertTitleError, message: error.localizedDescription)

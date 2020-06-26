@@ -75,7 +75,6 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-
 }
 
 // MARK: - Setup Constraints

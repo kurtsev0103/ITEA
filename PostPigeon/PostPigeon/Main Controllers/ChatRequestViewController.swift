@@ -58,7 +58,16 @@ class ChatRequestViewController: UIViewController {
     
     @objc private func acceptButtonTapped() {
         dismiss(animated: true) {
-            print(#function)
+            FirestoreManager.shared.changeToActive(chat: self.chat) { (result) in
+                switch result {
+                case .success():
+                    //TODO
+                    self.showAlert(title: kAlertTitleSuccess, message: "")
+                case .failure(let error):
+                    //TODO
+                    self.showAlert(title: kAlertTitleError, message: error.localizedDescription)
+                }
+            }
         }
     }
     
