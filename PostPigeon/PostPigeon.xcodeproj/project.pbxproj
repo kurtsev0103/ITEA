@@ -32,6 +32,7 @@
 		3461407024A3584A001833BC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461406F24A3584A001833BC /* GradientView.swift */; };
 		3461407224A36390001833BC /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461407124A36390001833BC /* WaitingChatCell.swift */; };
 		3461407424A36500001833BC /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461407324A36500001833BC /* SelfConfiguringCell.swift */; };
+		348161F524A6675D00E97DFF /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348161F424A6675D00E97DFF /* ChatsViewController.swift */; };
 		34AF3D7524A13C36009DCE7B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AF3D7424A13C36009DCE7B /* CustomTextField.swift */; };
 		34AF3D7724A14A18009DCE7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AF3D7624A14A18009DCE7B /* LoginViewController.swift */; };
 		34AF3D7D24A16311009DCE7B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AF3D7C24A16311009DCE7B /* CustomButton.swift */; };
@@ -86,6 +87,7 @@
 		3461406F24A3584A001833BC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		3461407124A36390001833BC /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		3461407324A36500001833BC /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		348161F424A6675D00E97DFF /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		34AF3D7424A13C36009DCE7B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		34AF3D7624A14A18009DCE7B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		34AF3D7C24A16311009DCE7B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				3450A4FC24A27A75007718A0 /* PeopleViewController.swift */,
 				34DEBA8424A3C30C0022B788 /* ProfileViewController.swift */,
 				344E3AC124A4957600519BEF /* ChatRequestViewController.swift */,
+				348161F424A6675D00E97DFF /* ChatsViewController.swift */,
 				3461406C24A34DD2001833BC /* Cell */,
 				34DEBA5D24A3736B0022B788 /* Header */,
 			);
@@ -473,6 +476,7 @@
 				3461407224A36390001833BC /* WaitingChatCell.swift in Sources */,
 				3461406B24A2A534001833BC /* Bundle-Decodable.swift in Sources */,
 				34FDF44224A18FC2000583C9 /* MainTabBarController.swift in Sources */,
+				348161F524A6675D00E97DFF /* ChatsViewController.swift in Sources */,
 				3450A4F024A26F54007718A0 /* StorageManager.swift in Sources */,
 				34FDF44824A19088000583C9 /* AuthManager.swift in Sources */,
 				34AF3D8324A17FDD009DCE7B /* ThirdRegistrViewController.swift in Sources */,

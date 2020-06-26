@@ -11,6 +11,7 @@ target 'PostPigeon' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
 
+  pod 'MessageKit'
   pod 'SDWebImage', '~> 5.0'
   pod 'Alamofire', '~> 5.2'
 
