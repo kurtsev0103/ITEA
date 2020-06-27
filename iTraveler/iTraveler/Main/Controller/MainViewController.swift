@@ -195,7 +195,6 @@ extension MainViewController: UISearchResultsUpdating {
 }
 
 // MARK: - Image Tapped
-
 extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
@@ -211,18 +210,12 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let image = info[.originalImage] as! UIImage
-        
-        StorageManager.shared.uploadImage(image: image) { (result) in
-            switch result {
-            case .success(let url):
-                print(url)
-                
-                
-            case .failure(let error):
-                self.showAlert(title: kAlertError, message: error.localizedDescription)
-            }
-        }
-
         dismiss(animated: true)
+            
+        let vc = storyboard?.instantiateViewController(identifier: "PhotoViewController") as! PhotoViewController
+        vc.image = image
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

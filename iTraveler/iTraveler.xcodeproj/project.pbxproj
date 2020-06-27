@@ -12,14 +12,13 @@
 		34042949249AE34D0039092E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34042948249AE34D0039092E /* Country.swift */; };
 		3404294C249AE83E0039092E /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404294A249AE83E0039092E /* CountryTableViewCell.swift */; };
 		3404294D249AE83E0039092E /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3404294B249AE83E0039092E /* CountryTableViewCell.xib */; };
-		341C0F1E249BBD1B004B0E96 /* CountryInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C0F1C249BBD1B004B0E96 /* CountryInfoTableViewCell.swift */; };
-		341C0F1F249BBD1B004B0E96 /* CountryInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341C0F1D249BBD1B004B0E96 /* CountryInfoTableViewCell.xib */; };
 		3426E7D824979266008B83CA /* RegistrationFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426E7D724979266008B83CA /* RegistrationFirstViewController.swift */; };
 		3426E7DA2497C697008B83CA /* RegistrationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426E7D92497C697008B83CA /* RegistrationSecondViewController.swift */; };
 		3426E7DE24980161008B83CA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426E7DD24980161008B83CA /* UserModel.swift */; };
 		344CA43B249AA1680041D434 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344CA43A249AA1680041D434 /* NetworkManager.swift */; };
 		3456B0AD24992BC30049F71E /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3456B0AC24992BC30049F71E /* UITextField + Extension.swift */; };
 		3456B0AF249995DF0049F71E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3456B0AE249995DF0049F71E /* MapViewController.swift */; };
+		347FF4FE24A7E75300DB3DBC /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FF4FD24A7E75300DB3DBC /* PhotoViewController.swift */; };
 		3499A7C9249BB51600583920 /* CountryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499A7C8249BB51600583920 /* CountryInfoViewController.swift */; };
 		34A9A3AE2496A66A00AB9B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A3AD2496A66A00AB9B24 /* AppDelegate.swift */; };
 		34A9A3B02496A66A00AB9B24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A3AF2496A66A00AB9B24 /* SceneDelegate.swift */; };
@@ -54,14 +53,13 @@
 		34042948249AE34D0039092E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		3404294A249AE83E0039092E /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		3404294B249AE83E0039092E /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
-		341C0F1C249BBD1B004B0E96 /* CountryInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoTableViewCell.swift; sourceTree = "<group>"; };
-		341C0F1D249BBD1B004B0E96 /* CountryInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryInfoTableViewCell.xib; sourceTree = "<group>"; };
 		3426E7D724979266008B83CA /* RegistrationFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFirstViewController.swift; sourceTree = "<group>"; };
 		3426E7D92497C697008B83CA /* RegistrationSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSecondViewController.swift; sourceTree = "<group>"; };
 		3426E7DD24980161008B83CA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		344CA43A249AA1680041D434 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3456B0AC24992BC30049F71E /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		3456B0AE249995DF0049F71E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		347FF4FD24A7E75300DB3DBC /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		3499A7C8249BB51600583920 /* CountryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoViewController.swift; sourceTree = "<group>"; };
 		34A9A3AA2496A66A00AB9B24 /* iTraveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTraveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A9A3AD2496A66A00AB9B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -279,6 +277,7 @@
 			children = (
 				34F5FDCC24984B0E00E64952 /* MainViewController.swift */,
 				3499A7C8249BB51600583920 /* CountryInfoViewController.swift */,
+				347FF4FD24A7E75300DB3DBC /* PhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,8 +288,6 @@
 				34F5FDCA24984AFD00E64952 /* Main.storyboard */,
 				3404294A249AE83E0039092E /* CountryTableViewCell.swift */,
 				3404294B249AE83E0039092E /* CountryTableViewCell.xib */,
-				341C0F1C249BBD1B004B0E96 /* CountryInfoTableViewCell.swift */,
-				341C0F1D249BBD1B004B0E96 /* CountryInfoTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,7 +379,6 @@
 			files = (
 				3404294D249AE83E0039092E /* CountryTableViewCell.xib in Resources */,
 				34A9A3CB2496AA4000AB9B24 /* Authentication.storyboard in Resources */,
-				341C0F1F249BBD1B004B0E96 /* CountryInfoTableViewCell.xib in Resources */,
 				34F5FDCB24984AFD00E64952 /* Main.storyboard in Resources */,
 				34F5FDBA2498102A00E64952 /* GoogleService-Info.plist in Resources */,
 				34A9A3BA2496A66B00AB9B24 /* LaunchScreen.storyboard in Resources */,
@@ -465,7 +461,7 @@
 				3499A7C9249BB51600583920 /* CountryInfoViewController.swift in Sources */,
 				3456B0AD24992BC30049F71E /* UITextField + Extension.swift in Sources */,
 				3426E7DA2497C697008B83CA /* RegistrationSecondViewController.swift in Sources */,
-				341C0F1E249BBD1B004B0E96 /* CountryInfoTableViewCell.swift in Sources */,
+				347FF4FE24A7E75300DB3DBC /* PhotoViewController.swift in Sources */,
 				34F5FDCD24984B0E00E64952 /* MainViewController.swift in Sources */,
 				34F5FDC624983CF500E64952 /* FirestoreError.swift in Sources */,
 				34F5FDC42498377900E64952 /* FirestoreManager.swift in Sources */,

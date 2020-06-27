@@ -137,6 +137,44 @@
             </objects>
             <point key="canvasLocation" x="1675" y="-68"/>
         </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="TJ0-nt-EvL">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CSX-vX-zyd" customClass="PhotoViewController" customModule="iTraveler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wpk-KM-4xV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEXT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="T7D-fQ-bwG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Slz-Rb-TNu">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oO5-a9-a2P" firstAttribute="trailing" secondItem="T7D-fQ-bwG" secondAttribute="trailing" id="DQ0-XH-cAf"/>
+                            <constraint firstItem="oO5-a9-a2P" firstAttribute="bottom" secondItem="T7D-fQ-bwG" secondAttribute="bottom" id="aZt-Bb-ecB"/>
+                            <constraint firstItem="T7D-fQ-bwG" firstAttribute="leading" secondItem="oO5-a9-a2P" secondAttribute="leading" id="dC1-Ti-4hC"/>
+                            <constraint firstItem="Slz-Rb-TNu" firstAttribute="centerX" secondItem="T7D-fQ-bwG" secondAttribute="centerX" id="hv9-qE-J67"/>
+                            <constraint firstItem="T7D-fQ-bwG" firstAttribute="top" secondItem="oO5-a9-a2P" secondAttribute="top" id="nDD-G4-huI"/>
+                            <constraint firstItem="Slz-Rb-TNu" firstAttribute="centerY" secondItem="T7D-fQ-bwG" secondAttribute="centerY" id="yuK-ah-dR0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oO5-a9-a2P"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Slz-Rb-TNu" id="hmx-sb-9hv"/>
+                        <outlet property="textLabel" destination="T7D-fQ-bwG" id="VN7-su-n8M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dW6-ke-w7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2418.840579710145" y="-68.303571428571431"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lCs-xL-Jkz">
             <objects>
