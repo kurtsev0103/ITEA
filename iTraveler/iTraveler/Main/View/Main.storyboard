@@ -20,14 +20,25 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fr-dG-MaO">
-                                <rect key="frame" x="40" y="772" width="50" height="50"/>
+                                <rect key="frame" x="20" y="772" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.4941176471" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="dCQ-v6-eRW"/>
-                                    <constraint firstAttribute="width" constant="50" id="i5n-DA-pxD"/>
+                                    <constraint firstAttribute="height" constant="70" id="dCQ-v6-eRW"/>
+                                    <constraint firstAttribute="width" constant="70" id="i5n-DA-pxD"/>
                                 </constraints>
                                 <connections>
                                     <action selector="logoutAction:" destination="cTX-4B-3hf" eventType="touchUpInside" id="Gwj-C6-xl0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN7-vW-pKL">
+                                <rect key="frame" x="324" y="772" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.4941176471" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="p4m-Yc-x94"/>
+                                    <constraint firstAttribute="height" constant="70" id="qDs-ns-YK8"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="photoButtonAction:" destination="cTX-4B-3hf" eventType="touchUpInside" id="Xd4-YB-66u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -36,15 +47,18 @@
                             <constraint firstItem="F1V-u4-PDL" firstAttribute="top" secondItem="yjh-Fc-mIc" secondAttribute="top" id="0Ij-V9-f6Z"/>
                             <constraint firstItem="F1V-u4-PDL" firstAttribute="leading" secondItem="yjh-Fc-mIc" secondAttribute="leading" id="7yM-37-gbh"/>
                             <constraint firstItem="yjh-Fc-mIc" firstAttribute="trailing" secondItem="F1V-u4-PDL" secondAttribute="trailing" id="Gzt-fA-whZ"/>
-                            <constraint firstItem="yjh-Fc-mIc" firstAttribute="bottom" secondItem="3Fr-dG-MaO" secondAttribute="bottom" constant="40" id="O86-tn-97S"/>
+                            <constraint firstItem="yjh-Fc-mIc" firstAttribute="bottom" secondItem="wN7-vW-pKL" secondAttribute="bottom" constant="20" id="HRz-8U-YBp"/>
+                            <constraint firstItem="yjh-Fc-mIc" firstAttribute="bottom" secondItem="3Fr-dG-MaO" secondAttribute="bottom" constant="20" id="O86-tn-97S"/>
+                            <constraint firstAttribute="trailing" secondItem="wN7-vW-pKL" secondAttribute="trailing" constant="20" id="VuE-4u-5C3"/>
                             <constraint firstItem="yjh-Fc-mIc" firstAttribute="bottom" secondItem="F1V-u4-PDL" secondAttribute="bottom" id="cHA-U3-dEw"/>
-                            <constraint firstItem="3Fr-dG-MaO" firstAttribute="leading" secondItem="yjh-Fc-mIc" secondAttribute="leading" constant="40" id="qn2-22-EYK"/>
+                            <constraint firstItem="3Fr-dG-MaO" firstAttribute="leading" secondItem="yjh-Fc-mIc" secondAttribute="leading" constant="20" id="qn2-22-EYK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yjh-Fc-mIc"/>
                     </view>
                     <navigationItem key="navigationItem" id="0YZ-co-gPo"/>
                     <connections>
                         <outlet property="logoutButton" destination="3Fr-dG-MaO" id="qfb-dC-F3C"/>
+                        <outlet property="photoButton" destination="wN7-vW-pKL" id="2Gi-hf-3nm"/>
                         <outlet property="tableView" destination="F1V-u4-PDL" id="vlz-hH-XGl"/>
                     </connections>
                 </viewController>

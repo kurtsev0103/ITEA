@@ -52,6 +52,7 @@ let kRestrictedLocationMessage  = "Application is not authorized for location se
 // MARK: - APP Files Name Key
 let kNameBackgroundImage        = "background"
 let kNameAccountImage           = "account"
+let kNamePhotoImage             = "photo"
 let kNamePhotoDefaultImage      = "imageDefault"
 let kCancelImage                = "cancel"
 let kMapImage                   = "mapImage"

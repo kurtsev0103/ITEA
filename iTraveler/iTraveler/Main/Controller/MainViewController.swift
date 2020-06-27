@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var photoButton: UIButton!
     
     private let searchController = UISearchController(searchResultsController: nil)
     private var filteredCountries = Countries()
@@ -53,9 +54,16 @@ class MainViewController: UIViewController {
         logoutButton.backgroundColor = .clear
         logoutButton.setImage(UIImage(named: kNameAccountImage), for: .normal)
         logoutButton.layer.borderColor = UIColor.darkGray.cgColor
-        logoutButton.layer.borderWidth = 2
+        logoutButton.layer.borderWidth = 1
         logoutButton.layer.cornerRadius = logoutButton.frame.height / 2
         logoutButton.clipsToBounds = true
+        
+        photoButton.backgroundColor = .clear
+        photoButton.setImage(UIImage(named: kNamePhotoImage), for: .normal)
+        photoButton.layer.borderColor = UIColor.darkGray.cgColor
+        photoButton.layer.borderWidth = 1
+        photoButton.layer.cornerRadius = logoutButton.frame.height / 2
+        photoButton.clipsToBounds = true
     }
     
     private func prepareNavigationTitle() {
@@ -99,6 +107,26 @@ class MainViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    @IBAction func photoButtonAction(_ sender: UIButton) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let camera = UIAlertAction(title: kActionSheetCamera, style: .default) { _ in
+            self.chooseImagePicker(source: .camera)
+        }
+        
+        let photo = UIAlertAction(title: kActionSheetPhoto, style: .default) { _ in
+            self.chooseImagePicker(source: .photoLibrary)
+        }
+        
+        let cancel = UIAlertAction(title: kActionSheetCancel, style: .cancel)
+        
+        actionSheet.addAction(camera)
+        actionSheet.addAction(photo)
+        actionSheet.addAction(cancel)
+        
+        present(actionSheet, animated: true)
     }
 }
 
@@ -173,5 +201,25 @@ extension MainViewController: UISearchResultsUpdating {
                 print(error.localizedDescription)
             }
         }
+    }
+}
+
+// MARK: - Image Tapped
+
+extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func chooseImagePicker(source: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(source) {
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = source
+            present(imagePicker, animated: true)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //let image = info[.originalImage] as? UIImage
+        dismiss(animated: true)
     }
 }
