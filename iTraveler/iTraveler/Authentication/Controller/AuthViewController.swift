@@ -42,11 +42,11 @@ class AuthViewController: UIViewController {
         
         restoreButton.setTitle(kButtonRestoreTitle, for: .normal)
         restoreButton.setTitleColor(.darkGray, for: .normal)
-        restoreButton.titleLabel?.font = UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 20)
+        restoreButton.titleLabel?.font = UIFont(name: Fonts.avenir, size: 20)
         
         registrationButton.setTitle(kButtonRegistrationTitle, for: .normal)
         registrationButton.setTitleColor(.darkGray, for: .normal)
-        registrationButton.titleLabel?.font = UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 20)
+        registrationButton.titleLabel?.font = UIFont(name: Fonts.avenir, size: 20)
     }
     
     private func prepareTextFields() {

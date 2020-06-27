@@ -29,8 +29,8 @@ class CountryTableViewCell: UITableViewCell {
         backgroundColor = .clear
         
         nameLabel.numberOfLines = 0
-        nameLabel.font = UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 20)
-        countryCodeLabel.font = UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 20)
+        nameLabel.font = UIFont(name: Fonts.avenir, size: 20)
+        countryCodeLabel.font = UIFont(name: Fonts.avenir, size: 20)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

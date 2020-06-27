@@ -55,7 +55,7 @@ class MapViewController: UIViewController {
     private func prepareLabel() {
         currentAddressLabel.textAlignment = .center
         currentAddressLabel.numberOfLines = 0
-        currentAddressLabel.font = UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 24)
+        currentAddressLabel.font = UIFont(name: Fonts.avenir, size: 24)
         currentAddressLabel.textColor = .darkGray
         currentAddressLabel.backgroundColor = UIColor(white: 1, alpha: 0.5)
         currentAddressLabel.layer.cornerRadius = 10

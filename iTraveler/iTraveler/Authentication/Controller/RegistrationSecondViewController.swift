@@ -58,7 +58,7 @@ class RegistrationSecondViewController: UIViewController {
     }
     
     private func prepareViews() {
-        timeZoneLabel.font = UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 20)
+        timeZoneLabel.font = UIFont(name: Fonts.avenir, size: 20)
         timeZoneLabel.text = kTimeZoneLabel + " " + TimeZone.current.identifier
     }
     

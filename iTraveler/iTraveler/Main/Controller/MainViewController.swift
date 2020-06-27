@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
     
     private func prepareNavigationTitle() {
         navigationController?.navigationBar.barTintColor = Colors.tropicYellow
-        navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 30)!, .foregroundColor: Colors.tropicOrange]
+        navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: Fonts.avenir, size: 30)!, .foregroundColor: Colors.tropicOrange]
         navigationItem.title = kMainVCTitle
     }
     

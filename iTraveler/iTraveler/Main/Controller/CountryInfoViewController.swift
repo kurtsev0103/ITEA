@@ -9,27 +9,49 @@
 import UIKit
 
 class CountryInfoViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
     
     var country: Country!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var alphaCodeLabel: UILabel!
+    @IBOutlet weak var capitalLabel: UILabel!
+    @IBOutlet weak var regionLabel: UILabel!
+    @IBOutlet weak var populationLabel: UILabel!
+    @IBOutlet weak var timezonesLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         setBackground()
         prepareNavigationTitle()
-        prepareTableView()
+        prepareLabels()
     }
     
     // MARK: - Private Method
+    
+    private func prepareLabels() {
+        nameLabel.font = UIFont(name: Fonts.avenir, size: 30)
+        alphaCodeLabel.font = UIFont(name: Fonts.avenir, size: 30)
+        capitalLabel.font = UIFont(name: Fonts.avenir, size: 30)
+        regionLabel.font = UIFont(name: Fonts.avenir, size: 30)
+        populationLabel.font = UIFont(name: Fonts.avenir, size: 30)
+        timezonesLabel.font = UIFont(name: Fonts.avenir, size: 30)
+        
+        nameLabel.text = country.name
+        alphaCodeLabel.text = country.alpha2Code + " / " + country.alpha3Code
+        capitalLabel.text = country.capital
+        regionLabel.text = country.region
+        populationLabel.text = String(country.population) + " people"
+        
+        var string = ""
+        for zone in country.timezones {
+            string += zone + " "
+        }
+        timezonesLabel.text = string
+    }
 
     private func prepareNavigationTitle() {
         navigationController?.navigationBar.barTintColor = Colors.tropicYellow
-        navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 30)!, .foregroundColor: Colors.tropicBlue]
+        navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: Fonts.avenir, size: 30)!, .foregroundColor: Colors.tropicBlue]
         
         if country.name.count > 7 {
             navigationItem.title = country.demonym
@@ -39,49 +61,12 @@ class CountryInfoViewController: UIViewController {
         
         let backButton = UIBarButtonItem(title: kButtonItemBack, style: .plain, target: self, action: #selector(goBack))
         navigationItem.leftBarButtonItem = backButton
-        navigationItem.leftBarButtonItem?.setTitleTextAttributes([.font: UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 20)!], for: .normal)
-    }
-    
-    private func prepareTableView() {
-        tableView.register(CountryInfoTableViewCell.nib(), forCellReuseIdentifier: CountryInfoTableViewCell .identifier)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = .clear
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes([.font: UIFont(name: Fonts.avenir, size: 20)!], for: .normal)
     }
     
     // MARK: - Actions
     
     @objc private func goBack() {
         navigationController?.popViewController(animated: true)
-    }
-}
-
-// MARK: - UITableViewDataSource
-
-extension CountryInfoViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CountryInfoTableViewCell.identifier, for: indexPath) as! CountryInfoTableViewCell
-                        
-        cell.configure()
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension CountryInfoViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height / 10
     }
 }

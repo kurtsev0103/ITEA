@@ -52,7 +52,7 @@ class ProgressIndicator: UIView {
         let textLabel = UILabel(frame: CGRect(x: 0, y: self.frame.height / 2 - 100, width: self.frame.width, height: 50))
         
         textLabel.textAlignment             = .center
-        textLabel.font                      = UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 24)
+        textLabel.font                      = UIFont(name: Fonts.avenir, size: 24)
         textLabel.text                      = loadingMessage
         textLabel.adjustsFontSizeToFitWidth = true
         textLabel.textColor                 = textColor

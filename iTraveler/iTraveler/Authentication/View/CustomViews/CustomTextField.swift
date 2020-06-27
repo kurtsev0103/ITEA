@@ -24,7 +24,7 @@ class CustomTextField: UITextField {
         textAlignment           = .center
         tintColor               = .darkGray
         textColor               = .darkGray
-        font                    = UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 18)
+        font                    = UIFont(name: Fonts.avenir, size: 18)
         backgroundColor         = UIColor(white: 1.0, alpha: 0.5)
         autocorrectionType      = .no
         layer.cornerRadius      = frame.size.height / 2
@@ -33,7 +33,7 @@ class CustomTextField: UITextField {
         clipsToBounds           = true
         
         let placeholder         = self.placeholder != nil ? self.placeholder! : ""
-        let placeholderFont     = UIFont(name: Fonts.avenirNextCondensedDemiBold, size: 18)!
+        let placeholderFont     = UIFont(name: Fonts.avenir, size: 18)!
         attributedPlaceholder   = NSAttributedString(string: placeholder, attributes:
             [NSAttributedString.Key.foregroundColor: UIColor.lightGray,
              NSAttributedString.Key.font: placeholderFont])
