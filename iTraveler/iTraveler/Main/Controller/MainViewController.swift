@@ -209,7 +209,20 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        //let image = info[.originalImage] as? UIImage
+        
+        let image = info[.originalImage] as! UIImage
+        
+        StorageManager.shared.uploadImage(image: image) { (result) in
+            switch result {
+            case .success(let url):
+                print(url)
+                
+                
+            case .failure(let error):
+                self.showAlert(title: kAlertError, message: error.localizedDescription)
+            }
+        }
+
         dismiss(animated: true)
     }
 }
