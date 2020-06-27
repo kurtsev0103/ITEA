@@ -183,24 +183,14 @@ extension MainViewController: UISearchResultsUpdating {
             tableView.reloadData()
             return
         }
-        filterContentForSearchText(text)
-    }
-    
-    private func filterContentForSearchText(_ searchText: String) {
-        NetworkManager.shared.requestApi(stringURL: "https://restcountries-v1.p.rapidapi.com/name/\(searchText)", method: .GET) { (result) in
-            switch result {
-            case .success(let data):
-                guard let data = data else { return }
-                if let contriesArray = NetworkHelpers.shared.parseCountries(data) {
-                    self.filteredCountries = contriesArray
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        
+        let filtered = countries.filter { (country) -> Bool in
+            let string = country.name + country.alpha2Code + country.alpha3Code
+            return string.lowercased().contains(text.lowercased())
         }
+        
+        filteredCountries = filtered
+        tableView.reloadData()
     }
 }
 
