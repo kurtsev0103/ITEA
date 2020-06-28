@@ -23,10 +23,6 @@ class StorageManager {
         return storageReference.child("avatars")
     }
     
-    private var imagesReference: StorageReference {
-        return storageReference.child("images")
-    }
-    
     // MARK: - Methods
     
     func upload(userPhoto: UIImage, userId: String, completion: @escaping (Result<URL, Error>) -> Void) {
