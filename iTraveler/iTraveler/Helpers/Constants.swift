@@ -20,6 +20,11 @@ struct Fonts {
     static let avenir = "AvenirNextCondensed-DemiBold"
 }
 
+// MARK: - API
+
+let apiKey    = "7102c46b9amshdcbc49f650a47c1p1f3d42jsnac61983b0e7f"
+let apiOCRKey = "d30c014ee888957"
+
 // MARK: - Alert Keys
 let kAlertOk                    = "Ok"
 let kAlertSuccess               = "Success"

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PhotoViewController: UIViewController {
         
@@ -36,13 +37,29 @@ class PhotoViewController: UIViewController {
         
         NetworkManager.shared.convertImageToText(image: image) { (result) in
             switch result {
-            case .success(let text):
-                DispatchQueue.main.async {
-                    self.navigationItem.hidesBackButton = false
-                    self.activityIndicator.startAnimating()
-                    self.activityIndicator.isHidden = true
-                    self.textLabel.text = text
+            case .success(let data):
+                guard let data = data else { return }
+                guard let text = NetworkHelpers.shared.parseText(data) else { return }
+                
+                NetworkManager.shared.getTranslatedText(text: text) { (result) in
+                    switch result {
+                        
+                    case .success(let data):
+                        guard let data = data else { return }
+                        guard let text = NetworkHelpers.shared.parseTranslatedText(data) else { return }
+                        
+                        DispatchQueue.main.async {
+                            self.navigationItem.hidesBackButton = false
+                            self.activityIndicator.startAnimating()
+                            self.activityIndicator.isHidden = true
+                            self.textLabel.text = text
+                        }
+                        
+                    case .failure(let error):
+                        self.showAlert(title: kAlertError, message: error.localizedDescription)
+                    }
                 }
+
             case .failure(let error):
                 self.showAlert(title: kAlertError, message: error.localizedDescription)
             }

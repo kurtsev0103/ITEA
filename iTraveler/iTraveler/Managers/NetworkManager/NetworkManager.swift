@@ -25,15 +25,12 @@ class NetworkManager {
             completion(.failure(NetworkError.noNetwork))
             return
         }
-        
-        let url = sharedNetworkHelpers.getUrlFromString(stringURL: stringURL)
-        let headers = sharedNetworkHelpers.getHeaderWithAPIName()
-        
+                
         switch method {
             
         case .GET:
             
-            AF.request(url, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
+            AF.request(stringURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
                 switch response.result {
                 case .success(_):
                     completion(.success(response.data))
@@ -44,7 +41,7 @@ class NetworkManager {
             
         case .POST:
             
-            AF.request(url, method: .post, parameters: parameters, headers: headers).responseJSON { (response) in
+            AF.request(stringURL, method: .post, parameters: parameters, headers: headers).responseJSON { (response) in
                 switch response.result {
                 case .success(_):
                     completion(.success(response.data))
@@ -55,7 +52,7 @@ class NetworkManager {
             
         case .PUT:
             
-            AF.request(url, method: .put, parameters: parameters, headers: headers).responseJSON { (response) in
+            AF.request(stringURL, method: .put, parameters: parameters, headers: headers).responseJSON { (response) in
                 switch response.result {
                 case .success(_):
                     completion(.success(response.data))
@@ -66,7 +63,7 @@ class NetworkManager {
             
         case .PATCH:
             
-            AF.request(url, method: .patch, parameters: parameters, headers: headers).responseJSON { (response) in
+            AF.request(stringURL, method: .patch, parameters: parameters, headers: headers).responseJSON { (response) in
                 switch response.result {
                 case .success(_):
                     completion(.success(response.data))
@@ -77,7 +74,7 @@ class NetworkManager {
             
         case .DELETE:
             
-            AF.request(url, method: .delete, parameters: parameters, headers: headers).responseJSON { (response) in
+            AF.request(stringURL, method: .delete, parameters: parameters, headers: headers).responseJSON { (response) in
                 switch response.result {
                 case .success(_):
                     completion(.success(response.data))
@@ -92,11 +89,11 @@ class NetworkManager {
 // MARK: - API request to get text from image
 extension NetworkManager {
     
-    func convertImageToText(image: UIImage?, completion: @escaping (Result<String, Error>) -> Void) {
+    func convertImageToText(image: UIImage?, completion: @escaping (Result<Data?, Error>) -> Void) {
         let imageData = image?.jpegData(compressionQuality: 0.6)
         let boundary = UUID().uuidString
         
-        let parameters: Parameters = ["apikey": "d30c014ee888957",
+        let parameters: Parameters = ["apikey": apiOCRKey,
                                       "isOverlayRequired": "True"]
         
         guard let url = URL(string: "https://api.ocr.space/Parse/Image") else { return }
@@ -110,20 +107,7 @@ extension NetworkManager {
         AF.request(request).responseJSON { (response) in
             switch response.result {
             case .success(_):
-                guard let data = response.data else { return }
-                
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
-                        guard let array = json["ParsedResults"] as? [Any]           else { return }
-                        guard let dict  = array.first           as? [String: Any]   else { return }
-                        guard let text  = dict["ParsedText"]    as? String          else { return }
-                        
-                        completion(.success(text))
-                    }
-                } catch {
-                    completion(.failure(error))
-                }
-
+                completion(.success(response.data))
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -168,6 +152,39 @@ extension NetworkManager {
         }
         
         return body
+    }
+}
+
+// MARK: - API request to get translated text
+extension NetworkManager {
+    func getTranslatedText(text: String, completion: @escaping (Result<Data?, Error>) -> Void) {
+        
+        let headers = ["x-rapidapi-host": "language-translation.p.rapidapi.com",
+                       "x-rapidapi-key": apiKey,
+                       "content-type": "application/json",
+                       "accept": "application/json"]
+        
+        let parameters = ["target": "ru",
+                          "text": text,
+                          "type": "plain"] as Parameters
+        
+        
+        let data = try? JSONSerialization.data(withJSONObject: parameters, options: [])
+        
+        guard let url = URL(string: "https://language-translation.p.rapidapi.com/translateLanguage/translate") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+        request.httpBody = data
+        
+        AF.request(request).responseJSON { (response) in
+            switch response.result {
+            case .success(_):
+                completion(.success(response.data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }
 

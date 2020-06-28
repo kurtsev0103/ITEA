@@ -20,29 +20,40 @@ class NetworkHelpers {
     static let shared = NetworkHelpers()
     private init() {}
     
-    private let apiKey = "7102c46b9amshdcbc49f650a47c1p1f3d42jsnac61983b0e7f"
-    private let baseURL = ""
-    
     // MARK: - Methods
-    
-    func getUrlFromString(stringURL: String) -> String {
-        guard stringURL.contains("http") else { return baseURL + stringURL }
-        return stringURL
-    }
-    
-    func getHeaderWithAPIName() -> HTTPHeaders {
-        let headers: HTTPHeaders = ["x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
-                                    "x-rapidapi-key" : apiKey,
-                                    "useQueryString" : "true"]
-        return headers
-    }
-    
-    // MARK: - Helper methods for Parse Countries
     
     func parseCountries(_ data: Data) -> Countries? {
         do {
             let countries = try JSONDecoder().decode(Countries.self, from: data)
             return countries
+        } catch {
+            print(error.localizedDescription)
+        }
+        return nil
+    }
+    
+    func parseText(_ data: Data) -> String? {
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
+                guard let array = json["ParsedResults"] as? [Any]           else { return nil }
+                guard let dict  = array.first           as? [String: Any]   else { return nil }
+                guard let text  = dict["ParsedText"]    as? String          else { return nil }
+                
+                return text
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return nil
+    }
+    
+    func parseTranslatedText(_ data: Data) -> String? {
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
+                guard let text = json["translatedText"] as? String else { return nil }
+                
+                return text
+            }
         } catch {
             print(error.localizedDescription)
         }

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Alamofire
 
 class MainViewController: UIViewController {
 
@@ -80,7 +81,12 @@ class MainViewController: UIViewController {
     }
     
     private func fetchCountries() {
-        NetworkManager.shared.requestApi(stringURL: "https://restcountries-v1.p.rapidapi.com/all", method: .GET) { (result) in
+        
+        let headers: HTTPHeaders = ["x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+                                    "x-rapidapi-key" : apiKey,
+                                    "useQueryString" : "true"]
+        
+        NetworkManager.shared.requestApi(stringURL: "https://restcountries-v1.p.rapidapi.com/all", method: .GET, headers: headers) { (result) in
             switch result {
             case .success(let data):
                 guard let data = data else { return }
