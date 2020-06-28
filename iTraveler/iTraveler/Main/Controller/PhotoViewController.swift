@@ -47,20 +47,5 @@ class PhotoViewController: UIViewController {
                 self.showAlert(title: kAlertError, message: error.localizedDescription)
             }
         }
-        
-        
-//        NetworkManager.shared.callOCRSpace(image: image) { (result) in
-//            switch result {
-//            case .success(let text):
-//                DispatchQueue.main.async {
-//                    self.navigationItem.hidesBackButton = false
-//                    self.activityIndicator.startAnimating()
-//                    self.activityIndicator.isHidden = true
-//                    self.textLabel.text = text
-//                }
-//            case .failure(let error):
-//                self.showAlert(title: kAlertError, message: error.localizedDescription)
-//            }
-//        }
     }
 }
