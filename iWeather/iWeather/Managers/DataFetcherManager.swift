@@ -25,9 +25,8 @@ class DataFetcherManager {
         dataFetcher.fetchJSONData(urlString: urlString, headers: headers, response: completion)
     }
     
-    func fetchCities(forCountry: Country, completion: @escaping (CityModel?) -> Void) {
-        let code = forCountry.code
-        let urlString = "https://countries-cities.p.rapidapi.com/location/country/\(code)/city/list"
+    func fetchCities(countryCode: String, completion: @escaping (CityModel?) -> Void) {
+        let urlString = "https://countries-cities.p.rapidapi.com/location/country/\(countryCode)/city/list"
         
         let headers = ["x-rapidapi-host" : "countries-cities.p.rapidapi.com",
                        "x-rapidapi-key"  : kApiKey]

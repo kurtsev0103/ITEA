@@ -16,7 +16,7 @@ protocol Networking {
 
 class NetworkManager: Networking {
     
-    func request(urlString: String, headers: HTTPHeaders? = nil, completion: @escaping (Data?, Error?) -> Void) {
+    func request(urlString: String, headers: HTTPHeaders?, completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url)
         

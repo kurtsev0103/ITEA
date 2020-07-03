@@ -28,7 +28,7 @@ class CityViewController: UIViewController {
     }
     
     private func fetchCities() {
-        dataFetcherManager.fetchCities(forCountry: country) { (citiesModel) in
+        dataFetcherManager.fetchCities(countryCode: country.code) { (citiesModel) in
             guard let citiesModel = citiesModel else { return }
             self.cities = citiesModel.cities.sorted { $0.name < $1.name }
             self.tableView.reloadData()

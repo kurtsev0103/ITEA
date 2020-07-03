@@ -20,7 +20,7 @@ class NetworkDataFetcher: DataFetcher {
         self.networking = networking
     }
     
-    func fetchJSONData<T: Decodable>(urlString: String, headers: HTTPHeaders? = nil, response: @escaping (T?) -> Void) {
+    func fetchJSONData<T: Decodable>(urlString: String, headers: HTTPHeaders?, response: @escaping (T?) -> Void) {
         networking.request(urlString: urlString, headers: headers) { (data, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -32,7 +32,7 @@ class NetworkDataFetcher: DataFetcher {
         }
     }
     
-    func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
+    private func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
         let decoder = JSONDecoder()
         guard let data = from else { return nil }
         
